@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Temple</title>
+
+    <meta name="theme-color"
+          content="#8B0000">
+
+    <meta name="description"
+          content="Temple Website">
+
+    <!-- Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <!-- PWA -->
+
+    <link rel="manifest"
+          href="manifest.json">
+
+</head>
+
+<body>
+
+<header id="hero">
+
+    <div class="overlay">
+
+        <h1 id="templeName"></h1>
+
+        <h2 id="shortName"></h2>
+
+        <p id="address"></p>
+
+        <div class="heroButtons">
+
+            <button id="btnDirections">
+                📍 Directions
+            </button>
+
+            <button id="btnCall">
+                ☎ Call
+            </button>
+
+            <button id="btnWhatsApp">
+                💬 WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main>
+
+<section id="announcementSection"
+         class="cardSection">
+
+<h2>📢 ప్రకటనలు</h2>
+
+<div id="announcements"></div>
+
+</section>
+
+<section id="darshanSection"
+         class="cardSection">
+
+<h2>🙏 దర్శన సమయములు</h2>
+
+<div id="darshan"></div>
+
+</section>
+
+<section id="festivalSection"
+         class="cardSection">
+
+<h2>🪔 పండుగలు</h2>
+
+<div id="festivals"></div>
+
+</section>
+
+<section id="quickLinks"
+         class="cardSection">
+
+<h2>📚 సమాచారం</h2>
+
+<div class="menuGrid">
+
+<button data-target="sthalaSection">
+📖<br>
+స్థల పురాణం
+</button>
+
+<button data-target="poojaSection">
+🙏<br>
+పూజలు
+</button>
+
+<button data-target="deityGallery">
+🖼<br>
+దేవత చిత్రాలు
+</button>
+
+<button data-target="templeGallery">
+🏛<br>
+గుడి చిత్రాలు
+</button>
+
+<button data-target="miracleSection">
+✨<br>
+మహిమలు
+</button>
+
+<button data-target="experienceSection">
+❤️<br>
+భక్తుల అనుభవాలు
+</button>
+
+<button data-target="donorSection">
+🤝<br>
+దాతలు
+</button>
+
+<button data-target="contactSection">
+☎<br>
+సంప్రదించండి
+</button>
+
+</div>
+
+</section>
+
+<section id="sthalaSection"
+         class="cardSection">
+
+<h2>📖 స్థల పురాణం</h2>
+
+<div id="sthalaContent"></div>
+
+</section>
+
+<section id="poojaSection"
+         class="cardSection">
+
+<h2>🙏 పూజలు</h2>
+
+<div id="poojaContent"></div>
+
+</section>
+
+<section id="deityGallery"
+         class="cardSection">
+
+<h2>🖼 దేవత చిత్రాలు</h2>
+
+<div class="gallery"
+     id="deityImages"></div>
+
+</section>
+
+<section id="templeGallery"
+         class="cardSection">
+
+<h2>🏛 గుడి చిత్రాలు</h2>
+
+<div class="gallery"
+     id="templeImages"></div>
+
+</section>
+
+<section id="miracleSection"
+         class="cardSection">
+
+<h2>✨ దేవత మహిమలు</h2>
+
+<div id="miracles"></div>
+
+</section>
+
+<section id="experienceSection"
+         class="cardSection">
+
+<h2>❤️ భక్తుల అనుభవాలు</h2>
+
+<div id="experiences"></div>
+
+</section>
+
+<section id="donorSection"
+         class="cardSection">
+
+<h2>🤝 దాతలు</h2>
+
+<div id="donors"></div>
+
+</section>
+
+<section id="contactSection"
+         class="cardSection">
+
+<h2>☎ సంప్రదించండి</h2>
+
+<div id="contact"></div>
+
+<div id="map"></div>
+
+</section>
+
+</main>
+
+<button id="topButton">
+
+↑
+
+</button>
+
+<script src="config.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
