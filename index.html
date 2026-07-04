@@ -1,245 +1,205 @@
+
 <!DOCTYPE html>
 <html lang="te">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Temple</title>
-
-    <meta name="theme-color"
-          content="#8B0000">
-
-    <meta name="description"
-          content="Temple Website">
-
-    <!-- Fonts -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap"
-          rel="stylesheet">
-
-    <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="style.css">
-
-    <!-- PWA -->
-
-    <link rel="manifest"
-          href="manifest.json">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Info</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
+    header { background:#c44b2d; color:#fff; padding:1rem; text-align:center; }
+    .section { padding:1rem; margin:0.5rem; background:#fff; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    h2 { margin-top:0; font-size:1.2rem; color:#c44b2d; }
+    .card { margin:0.5rem 0; padding:0.5rem; border-bottom:1px solid #eee; }
+    .card:last-child { border-bottom:none; }
+    .image-grid { display:flex; flex-wrap:wrap; gap:10px; }
+    .image-grid img { width:100%; max-width:150px; border-radius:6px; }
+    .contact a { display:block; color:#c44b2d; text-decoration:none; margin:4px 0; }
+    iframe { width:100%; height:250px; border:0; border-radius:8px; }
+    #installBtn { display:none; background:#c44b2d; color:#fff; padding:10px; border:none; border-radius:6px; margin:10px auto; width:90%; }
+  </style>
 </head>
-
 <body>
-
-<header id="hero">
-
-    <div class="overlay">
-
-        <h1 id="templeName"></h1>
-
-        <h2 id="shortName"></h2>
-
-        <p id="address"></p>
-
-        <div class="heroButtons">
-
-            <button id="btnDirections">
-                📍 Directions
-            </button>
-
-            <button id="btnCall">
-                ☎ Call
-            </button>
-
-            <button id="btnWhatsApp">
-                💬 WhatsApp
-            </button>
-
-        </div>
-
-    </div>
-
-</header>
-
-<main>
-
-<section id="announcementSection"
-         class="cardSection">
-
-<h2>📢 ప్రకటనలు</h2>
-
-<div id="announcements"></div>
-
-</section>
-
-<section id="darshanSection"
-         class="cardSection">
-
-<h2>🙏 దర్శన సమయములు</h2>
-
-<div id="darshan"></div>
-
-</section>
-
-<section id="festivalSection"
-         class="cardSection">
-
-<h2>🪔 పండుగలు</h2>
-
-<div id="festivals"></div>
-
-</section>
-
-<section id="quickLinks"
-         class="cardSection">
-
-<h2>📚 సమాచారం</h2>
-
-<div class="menuGrid">
-
-<button data-target="sthalaSection">
-📖<br>
-స్థల పురాణం
-</button>
-
-<button data-target="poojaSection">
-🙏<br>
-పూజలు
-</button>
-
-<button data-target="deityGallery">
-🖼<br>
-దేవత చిత్రాలు
-</button>
-
-<button data-target="templeGallery">
-🏛<br>
-గుడి చిత్రాలు
-</button>
-
-<button data-target="miracleSection">
-✨<br>
-మహిమలు
-</button>
-
-<button data-target="experienceSection">
-❤️<br>
-భక్తుల అనుభవాలు
-</button>
-
-<button data-target="donorSection">
-🤝<br>
-దాతలు
-</button>
-
-<button data-target="contactSection">
-☎<br>
-సంప్రదించండి
-</button>
-
-</div>
-
-</section>
-
-<section id="sthalaSection"
-         class="cardSection">
-
-<h2>📖 స్థల పురాణం</h2>
-
-<div id="sthalaContent"></div>
-
-</section>
-
-<section id="poojaSection"
-         class="cardSection">
-
-<h2>🙏 పూజలు</h2>
-
-<div id="poojaContent"></div>
-
-</section>
-
-<section id="deityGallery"
-         class="cardSection">
-
-<h2>🖼 దేవత చిత్రాలు</h2>
-
-<div class="gallery"
-     id="deityImages"></div>
-
-</section>
-
-<section id="templeGallery"
-         class="cardSection">
-
-<h2>🏛 గుడి చిత్రాలు</h2>
-
-<div class="gallery"
-     id="templeImages"></div>
-
-</section>
-
-<section id="miracleSection"
-         class="cardSection">
-
-<h2>✨ దేవత మహిమలు</h2>
-
-<div id="miracles"></div>
-
-</section>
-
-<section id="experienceSection"
-         class="cardSection">
-
-<h2>❤️ భక్తుల అనుభవాలు</h2>
-
-<div id="experiences"></div>
-
-</section>
-
-<section id="donorSection"
-         class="cardSection">
-
-<h2>🤝 దాతలు</h2>
-
-<div id="donors"></div>
-
-</section>
-
-<section id="contactSection"
-         class="cardSection">
-
-<h2>☎ సంప్రదించండి</h2>
-
-<div id="contact"></div>
-
-<div id="map"></div>
-
-</section>
-
-</main>
-
-<button id="topButton">
-
-↑
-
-</button>
-
-<script src="config.js"></script>
-
-<script src="app.js"></script>
-
+  <header id="temple-name"></header>
+
+  <div class="section" id="about"></div>
+  <div class="section" id="images"></div>
+  <div class="section" id="sthala"></div>
+  <div class="section" id="darshan"></div>
+  <div class="section" id="poojas"></div>
+  <div class="section" id="donors"></div>
+  <div class="section" id="experiences"></div>
+  <div class="section" id="announcements"></div>
+  <div class="section" id="festivals"></div>
+  <div class="section" id="map"></div>
+  <div class="section contact" id="contact"></div>
+
+  <button id="installBtn">📲 Add to Home Screen</button>
+
+  <script>
+    const STORAGE_KEY = "templeData";
+    const CACHE_KEY = "templeCacheKey";
+
+    async function fetchData() {
+      const url = "https://script.google.com/macros/s/AKfycbyf_tPb1L23wvcBRH3t_MjDFI0xDDUVC-uU7ADMU197RSYoiD9Fz55pvsQFV2TLNoOG/exec";
+      try {
+        const res = await fetch(url);
+        const json = await res.json();
+
+        const newKey = json.cacheKey;
+        const oldKey = localStorage.getItem(CACHE_KEY);
+
+        if (newKey !== oldKey) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(json.data));
+          localStorage.setItem(CACHE_KEY, newKey);
+          console.log("Data refreshed from Google Sheets");
+        } else {
+          console.log("Using cached data");
+        }
+
+        return JSON.parse(localStorage.getItem(STORAGE_KEY));
+      } catch (e) {
+        console.warn("Fetch failed, using local cache");
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      }
+    }
+
+    function render(data) {
+      document.getElementById("temple-name").textContent = data.TempleInfo.TempleName;
+      document.getElementById("about").innerHTML = `<h2>గురించి</h2><p>${data.TempleInfo.AboutTemple}</p>`;
+
+      // Images
+      const images = document.getElementById("images");
+      images.innerHTML = `<h2>చిత్రాలు</h2><div class="image-grid"></div>`;
+      const grid = images.querySelector(".image-grid");
+      [...(data.Images?.deity || []), ...(data.Images?.temple || [])].forEach(img => {
+        grid.innerHTML += `<div><strong>${img.Title}</strong><br><img src="${img.ImageURL}" alt="${img.Title}"></div>`;
+      });
+
+      // Sthala Puranam
+      const sthala = document.getElementById("sthala");
+      sthala.innerHTML = `<h2>స్థల పురాణం</h2>`;
+      (data.SthalaPuranam || []).forEach(s => {
+        sthala.innerHTML += `<div class="card"><strong>${s.Title}</strong><br>${s.Description}</div>`;
+      });
+
+      // Darshan Timings
+      const darshan = document.getElementById("darshan");
+      darshan.innerHTML = `<h2>దర్శన సమయాలు</h2>`;
+      if (!data.Darshan || data.Darshan.length === 0) {
+        darshan.innerHTML += `<div class="card">No timings available</div>`;
+      } else {
+        data.Darshan.forEach(d => {
+          darshan.innerHTML += `<div class="card">${d.Time}</div>`;
+        });
+      }
+
+      // Pooja Fees
+      const poojas = document.getElementById("poojas");
+      poojas.innerHTML = `<h2>పూజా వివరాలు</h2>`;
+      if (!data.Poojas || data.Poojas.length === 0) {
+        poojas.innerHTML += `<div class="card">No pooja details available</div>`;
+      } else {
+        data.Poojas.forEach(p => {
+          poojas.innerHTML += `<div class="card"><strong>${p.Name}</strong> - ₹${p.Fee}</div>`;
+        });
+      }
+
+      // Donors
+      const donors = document.getElementById("donors");
+      donors.innerHTML = `<h2>దాతలు</h2>`;
+      (data.Donors || []).forEach(d => {
+        donors.innerHTML += `<div class="card"><strong>${d.Name}</strong> (${d.Place}) - ₹${d.Amount}</div>`;
+      });
+
+      // Experiences
+      const exp = document.getElementById("experiences");
+      exp.innerHTML = `<h2>భక్తుల అనుభవాలు</h2>`;
+      if (!data.Experiences || data.Experiences.length === 0) {
+        exp.innerHTML += `<div class="card">No experiences yet</div>`;
+      } else {
+        data.Experiences.forEach(e => {
+          exp.innerHTML += `<div class="card">${e.Description}</div>`;
+        });
+      }
+
+      // Helper: format date dd/mm/yyyy
+      function formatDate(iso) {
+        const d = new Date(iso);
+        return d.toLocaleDateString("en-GB");
+      }
+      const now = new Date();
+
+      // Announcements
+      const announcements = document.getElementById("announcements");
+      announcements.innerHTML = `<h2>ప్రకటనలు</h2>`;
+      (data.Announcements || []).filter(a => new Date(a.Date) > now).forEach(a => {
+        announcements.innerHTML += `<div class="card"><strong>${formatDate(a.Date)}</strong><br>${a.Title}<br>${a.Description}</div>`;
+      });
+
+      // Festivals
+      const festivals = document.getElementById("festivals");
+      festivals.innerHTML = `<h2>ఉత్సవాలు</h2>`;
+      (data.Festivals || []).filter(f => new Date(f.Date) > now).forEach(f => {
+        festivals.innerHTML += `<div class="card"><strong>${formatDate(f.Date)}</strong><br>${f.Festival}<br>${f.Description}</div>`;
+      });
+
+      // Map
+      document.getElementById("map").innerHTML = `
+        <h2>మాపు</h2>
+        <iframe src="https://www.google.com/maps?q=${data.TempleInfo.Latitude},${data.TempleInfo.Longitude}&hl=te&z=15&output=embed"></iframe>
+      `;
+
+      // Contact
+      const contact = document.getElementById("contact");
+      contact.innerHTML = `
+        <h2>సంప్రదించండి</h2>
+        <p>${data.TempleInfo.Address}</p>
+        <a href="tel:${data.TempleInfo.Phone}">📞 ${data.TempleInfo.Phone}</a>
+        <a href="mailto:${data.TempleInfo.Email}">✉️ ${data.TempleInfo.Email}</a>
+        <a href="https://${data.TempleInfo.Website}" target="_blank">🌐 ${data.TempleInfo.Website}</a>
+      `;
+    }
+
+    // Add to Home Screen prompt
+    
+    
+    let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.style.display = "block";
+    });
+
+    installBtn.addEventListener("click", () => {
+      installBtn.style.display = "none";
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(choice => {
+          if (choice.outcome === "accepted") {
+            console.log("User accepted Add to Home Screen");
+          } else {
+            console.log("User dismissed Add to Home Screen");
+          }
+          deferredPrompt = null;
+        });
+      }
+    });
+
+    // Initialize: fetch and render data
+    fetchData().then(render);
+
+    // Register service worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").then(() => {
+        console.log("Service Worker registered");
+      }).catch(err => {
+        console.error("Service Worker registration failed:", err);
+      });
+    }
+  </script>
 </body>
-
 </html>
